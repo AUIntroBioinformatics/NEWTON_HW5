@@ -14,7 +14,7 @@ mt=ATmt.fasta
 ch=ATcp.fasta
 cV=ATchrV.fasta
 CHRI_link=`ln -s /apps/bio/unzipped/genomes/Arabidopsis_thaliana/CHR_I`
-thaliana_link=`ln -s /apps/bio/unzipped/genomes/Arabidopsis_thaliana
+thaliana_link=`ln -s /apps/bio/unzipped/genomes/Arabidopsis_thaliana`
 ########################
 
 ########################
@@ -60,5 +60,3 @@ blastn -db "ATcp.fasta ATchrV.fasta Arabidopsis_thaliana/CHR_I/NC_003070.gbk ATm
 
 #set variable to see if any had 0 hits and put into RawCounts.txt file
 NUM=$(blastn -db "ATcp.fasta ATchrV.fasta Arabidopsis_thaliana/CHR_I/NC_003070.gbk ATmt.fasta" -query $test -outfmt 7 -evalue 0.00001 -max_target_seqs 1 | grep -c '0 hits' ) && echo $NUM No_hits >> RawCounts.txt
-
-
